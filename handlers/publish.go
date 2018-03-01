@@ -3,7 +3,18 @@ package handlers
 import (
 	"log"
 	"net/http"
+
+	"github.com/hspazio/hermes-lite/hub"
+
+	"github.com/gorilla/mux"
 )
+
+// TODO: move this out
+var h hub.Hub
+
+func init() {
+	h = hub.NewHub()
+}
 
 // Publish a message to a feed
 func Publish(w http.ResponseWriter, r *http.Request) {
@@ -13,7 +24,8 @@ func Publish(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer conn.Close()
-	//feed, _ := mux.Vars(r)["name"]
+
+	feed, _ := mux.Vars(r)["name"]
 
 	for {
 		_, message, err := conn.ReadMessage()
@@ -22,5 +34,6 @@ func Publish(w http.ResponseWriter, r *http.Request) {
 			break
 		}
 		log.Printf("received: %s", message)
+		h.Publish(feed, message)
 	}
 }
