@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/hspazio/hermes-go/airtime"
+	"github.com/hspazio/airtime/airtime"
 )
 
 func main() {
