@@ -34,7 +34,6 @@ func NewHub() Hub {
 	go func() {
 		log.Println("hub started")
 		for envelope := range h.broadcast {
-			log.Printf("hub: new message broadcaster: %s", envelope.message)
 			h.mx.RLock()
 			for sub := range h.subscriptions[envelope.feed] {
 				select {

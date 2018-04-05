@@ -1,4 +1,3 @@
 build:
-	go build -o hermes ./cmd/server.go
-	go build ./cmd/publisher.go
-	go build ./cmd/subscriber.go
+	go build -o cmd/server ./cmd/server.go
+	go build -o cmd/client ./cmd/client.go
