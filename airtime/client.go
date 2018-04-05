@@ -25,7 +25,7 @@ type Connection struct {
 
 // Connect to a feed in order to establish a connection
 func (c *Client) Connect(feed string) (*Connection, error) {
-	conn, _, err := websocket.DefaultDialer.Dial(c.subscribeURL(feed), nil)
+	conn, _, err := websocket.DefaultDialer.Dial(c.connectURL(feed), nil)
 	if err != nil {
 		return nil, fmt.Errorf("could not subscribe to feed '%s': %v", feed, err)
 	}
@@ -84,7 +84,7 @@ func (c *Client) awaitClosure(conn *Connection) {
 	conn.Closed <- signal
 }
 
-func (c *Client) subscribeURL(feed string) string {
+func (c *Client) connectURL(feed string) string {
 	path := fmt.Sprintf("/feeds/%s", feed)
 	u := url.URL{Scheme: "ws", Host: c.Host, Path: path}
 	return u.String()
