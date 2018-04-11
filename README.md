@@ -92,3 +92,10 @@ This is library is still work-in-progress and it's still missing a lot of basic 
 * persist and replay undelivered messages when client reconnects
 * read/write permissions management
 * more...
+
+## License
+
+
+## License
+
+Copyright (c) 2018 Fabio Pitino, released under the [MIT license](http://www.opensource.org/licenses/MIT).
