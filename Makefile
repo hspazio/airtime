@@ -1,3 +1,3 @@
 build:
-	go build -o cmd/server ./cmd/server.go
-	go build -o cmd/client ./cmd/client.go
+	go build -o example/server ./example/server.go
+	go build -o example/client ./example/client.go

@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/hspazio/airtime/airtime"
+	"github.com/hspazio/airtime"
 )
 
 func main() {
