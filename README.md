@@ -1,6 +1,13 @@
 # Airtime
 
-PubSub client and server using WebSockets in Go
+Airtime is a PubSub Go library that uses WebSockets. It includes the server implementation as well as the client.
+
+Once the server is running, the client can connect to a feed by using the `Connect("feedname")` function. This returns a connection object that allows the client to:
+
+1. subscribe to any messages sent through the feed
+2. publish meessages to the feed
+3. receive any errors from the feed
+4. close the connection
 
 ## Installation
 
@@ -75,3 +82,13 @@ func main() {
 	}
 }
 ```
+
+## TODO
+
+This is library is still work-in-progress and it's still missing a lot of basic functionalities: 
+
+* authentication
+* make client more resilient to network failures
+* persist and replay undelivered messages when client reconnects
+* read/write permissions management
+* more...
