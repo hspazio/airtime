@@ -2,6 +2,12 @@
 
 PubSub client and server using WebSockets in Go
 
+## Installation
+
+```bash
+go get github.com/hspazio/airtime
+```
+
 ## Server
 
 ```go
@@ -10,7 +16,7 @@ package main
 import (
   "log"
 
-  "github.com/hspazio/airtime/airtime"
+  "github.com/hspazio/airtime"
 )
 
 func main() {
@@ -30,7 +36,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/hspazio/airtime/airtime"
+	"github.com/hspazio/airtime"
 )
 
 func main() {
