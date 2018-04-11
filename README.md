@@ -93,8 +93,6 @@ This is library is still work-in-progress and it's still missing a lot of basic 
 * read/write permissions management
 * more...
 
-## License
-
 
 ## License
 
